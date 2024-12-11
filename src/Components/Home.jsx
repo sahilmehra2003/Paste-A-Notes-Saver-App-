@@ -45,7 +45,7 @@ const Home = () => {
             })
         }else{
             // create
-            if(allPaste.find((p)=>p.title===paste.title){
+            if(allPaste.find((p)=>p.title===paste.title)){
                 toast.error(`Paste with title "${paste.title}" already exists.`,{
                 style:toastStyle,
               });
