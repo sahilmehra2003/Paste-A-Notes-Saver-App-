@@ -20,7 +20,7 @@ export const pasteSlice=createSlice({
             //   check don't create paste with same title
             const existingPaste=state.pastes.find(p=>p.title===paste.title)
             if (existingPaste) {
-                toast.error(`Paste with title "${paste.title}" already exists.`);
+                // toast.error(`Paste with title "${paste.title}" already exists.`);
                 return state;
             }
               state.pastes.push(paste);
