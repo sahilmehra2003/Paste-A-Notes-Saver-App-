@@ -45,10 +45,15 @@ const Home = () => {
             })
         }else{
             // create
+            if(allPaste.find((p)=>p.title===paste.title){
+                toast.error(`Paste with title "${paste.title}" already exists.`,{
+                style:toastStyle,
+              });
+            }else{
             dispatch(addToPastes(paste))
             toast.success("Paste Created Successfully",{
               style: toastStyle,
-            });
+            });}
         }
     }
         // after creation or updation
