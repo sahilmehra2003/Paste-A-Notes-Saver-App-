@@ -61,7 +61,7 @@ const Paste = () => {
     }
     // share the content using link
     function handleShare(id,title,content){
-      const url=`https://paste-a-notes-saver-app.vercel.app/pastes/share?id=${encodeURIComponent(id)}&title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}`
+      const url=`https://paste-a-notes-saver-o8levk0au-sahil-mehras-projects-56f856e5.vercel.app/pastes/share?id=${encodeURIComponent(id)}&title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}`
       navigator.clipboard.writeText(url);
       toast.success("Url copied to clipboard",{
         style:toastStyle 
