@@ -30,15 +30,15 @@ const ViewPaste = () => {
   }, [id, allPastes]);
 
   // If no paste found by ID, try to get from shared URL parameters
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const sharedId = params.get('id');
-    const sharedContent = params.get('content');
-    const sharedTitle=params.get('title');
-    if (sharedId && sharedContent && sharedTitle && !paste) {
-      setPaste({ _id: sharedId, title: sharedTitle, content: sharedContent });
-    }
-  }, [paste]);
+  // useEffect(() => {
+  //   const params = new URLSearchParams(window.location.search);
+  //   const sharedId = params.get('id');
+  //   const sharedContent = params.get('content');
+  //   const sharedTitle=params.get('title');
+  //   if (sharedId && sharedContent && sharedTitle && !paste) {
+  //     setPaste({ _id: sharedId, title: sharedTitle, content: sharedContent });
+  //   }
+  // }, [paste]);
 
   // Handle case where paste is not found or undefined
   if (!paste) {
