@@ -7,7 +7,6 @@ import { MdSearch,MdEdit, MdDelete } from "react-icons/md";
 import { RiCalendarCheckLine } from "react-icons/ri";
 import { GrFormView } from "react-icons/gr";
 import { FiCopy } from "react-icons/fi";
-import { FaShare } from "react-icons/fa";
 const Paste = () => {
 
     const pastes=useSelector((state)=>state.paste.pastes)
@@ -58,14 +57,6 @@ const Paste = () => {
       const localDateTime=date.toLocaleString('en-IN',options);
       return localDateTime
       
-    }
-    // share the content using link
-    function handleShare(id,title,content){
-      const url=`https://paste-a-notes-saver-o8levk0au-sahil-mehras-projects-56f856e5.vercel.app/pastes/share?id=${encodeURIComponent(id)}&title=${encodeURIComponent(title)}&content=${encodeURIComponent(content)}`
-      navigator.clipboard.writeText(url);
-      toast.success("Url copied to clipboard",{
-        style:toastStyle 
-      });
     }
   return (
     <div className='flex flex-col md:items-center  w-full items-start justify-center'>
@@ -121,11 +112,6 @@ const Paste = () => {
                           }}><FiCopy/></button>
                           <button className={`${theme==='dark-theme' ? 'bg-[#151515]': 'bg-slate-100'} px-2 py-1 rounded-sm border-1 hover:text-blue-300`} 
                           onClick={()=>handleDelete(paste?._id,paste?.title)}><MdDelete/></button>
-                          {/* share button ka logic->share pe click karne pe link generate hojaye jo dusro ke sath share kar paye */}
-                          <button onClick={()=>handleShare(paste?._id,paste?.title,paste?.content)}
-                          className={`${theme==='dark-theme' ? 'bg-[#151515]': 'bg-slate-100'} px-2 py-1 rounded-sm border-1 hover:text-blue-300`}>                 
-                             <FaShare/>
-                          </button>
                        </div>
                        <div className='flex space-x-3 items-center font-semibold'>
                         <span><RiCalendarCheckLine/></span>
